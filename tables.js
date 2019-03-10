@@ -73,10 +73,20 @@ looker.plugins.visualizations.add({
   
       // if debug, write out all the data
       if(config.debug){
-        buildDebugPre("data_pre", data, this._textElement)
-        buildDebugPre("config_pre", config, this._textElement)
-        buildDebugPre("query_response_pre", queryResponse, this._textElement)
-        buildDebugPre("details_pre", details, this._textElement)
+        id = 'date_pre'
+        if(document.getElementById('id')) {
+          el = document.getElementById(id)
+        } else {
+          el = document.createElement('pre')
+          el.setAttribute('id', id)
+          this._textElement.appendChild(el)
+        }
+
+        el.innerHTML = content
+        // buildDebugPre("data_pre", data, this._textElement)
+        // buildDebugPre("config_pre", config, this._textElement)
+        // buildDebugPre("query_response_pre", queryResponse, this._textElement)
+        // buildDebugPre("details_pre", details, this._textElement)
       }
       
 
