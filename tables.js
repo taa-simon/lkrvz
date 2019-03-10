@@ -41,13 +41,13 @@ looker.plugins.visualizations.add({
     },
     // Render in response to the data or settings changing
     updateAsync: function(data, element, config, queryResponse, details, done) {
-      function buildDebugPre(id, content){
+      function buildDebugPre(id, content, parent){
         if(document.getElementById(id)) {
           el = document.getElementById(id)
         } else {
           el = document.createElement('pre')
           el.setAttribute('id', id)
-          this._textElement.appendChild(el)
+          parent.appendChild(el)
         }
 
         el.innerHTML = content
@@ -73,10 +73,10 @@ looker.plugins.visualizations.add({
   
       // if debug, write out all the data
       if(config.debug){
-        buildDebugPre("data_pre", data)
-        buildDebugPre("config_pre", config)
-        buildDebugPre("query_response_pre", queryResponse)
-        buildDebugPre("details_pre", details)
+        buildDebugPre("data_pre", data, this._textElement)
+        buildDebugPre("config_pre", config, this._textElement)
+        buildDebugPre("query_response_pre", queryResponse, this._textElement)
+        buildDebugPre("details_pre", details, this._textElement)
       }
       
 
