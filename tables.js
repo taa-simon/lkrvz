@@ -73,10 +73,10 @@ looker.plugins.visualizations.add({
   
       // if debug, write out all the data
       if(config.debug){
-        buildDebugPre(data)
-        buildDebugPre(config)
-        buildDebugPre(queryResponse)
-        buildDebugPre(details)
+        buildDebugPre("data_pre", data)
+        buildDebugPre("config_pre", config)
+        buildDebugPre("query_response_pre", queryResponse)
+        buildDebugPre("details_pre", details)
       }
       
 
