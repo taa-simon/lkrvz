@@ -45,7 +45,7 @@ looker.plugins.visualizations.add({
         if(document.getElementById(id)) {
           el = document.getElementById(id)
         } else {
-          el = document.createElement('<pre>')
+          el = document.createElement('pre')
           _textElement.appendChild(el)
         }
 
