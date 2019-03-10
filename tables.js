@@ -42,14 +42,24 @@ looker.plugins.visualizations.add({
     // Render in response to the data or settings changing
     updateAsync: function(data, element, config, queryResponse, details, done) {
       function buildDebugPre(id, content){
-        sel = '#' + id
-        if($(sel).length){
-  
+        if(document.getElementById(id)) {
+          el = document.getElementById(id)
         } else {
-          _textElement.appendChild($('<pre id=' + id + '>'))
+          el = document.createElement('<pre>')
+          _textElement.appendChild(el)
         }
+
+        el.setAttribute('id', id)
+        el.innerHTML = content
         
-        $(sel).innerHTML(content)
+        // sel = '#' + id
+        // if($(sel).length){
+  
+        // } else {
+          // _textElement.appendChild($('<pre id=' + id + '>'))
+        // }
+        
+        // $(sel).innerHTML(content)
       }
   
       // Clear any errors from previous updates
