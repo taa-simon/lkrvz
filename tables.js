@@ -47,7 +47,7 @@ looker.plugins.visualizations.add({
         } else {
           el = document.createElement('pre')
           el.setAttribute('id', id)
-          _textElement.appendChild(el)
+          this._textElement.appendChild(el)
         }
 
         el.innerHTML = content
