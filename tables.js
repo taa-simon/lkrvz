@@ -41,6 +41,16 @@ looker.plugins.visualizations.add({
     },
     // Render in response to the data or settings changing
     updateAsync: function(data, element, config, queryResponse, details, done) {
+      function buildDebugPre(id, content){
+        sel = '#' + id
+        if($(sel).length){
+  
+        } else {
+          _textElement.appendChild($('<pre id=' + id + '>'))
+        }
+        
+        $(sel).innerHTML(content)
+      }
   
       // Clear any errors from previous updates
       this.clearErrors()
@@ -76,16 +86,5 @@ looker.plugins.visualizations.add({
   
       // We are done rendering! Let Looker know.
       done()
-    },
-
-    buildDebugPre: function(id, contents){
-      sel = '#' + id
-      if($(sel).length){
-
-      } else {
-        _textElement.appendChild($('<pre id=' + id + '>'))
-      }
-      
-      $(sel).innerHTML(contents)
     }
   })
