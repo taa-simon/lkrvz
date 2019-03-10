@@ -27,6 +27,21 @@ looker.plugins.visualizations.add({
       // Insert a <style> tag with some styles we'll use later.
       element.innerHTML = `
         <style>
+        <style>
+        .hello-world-vis {
+          /* Vertical centering */
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+        }
+        .hello-world-text-large {
+          font-size: 72px;
+        }
+        .hello-world-text-small {
+          font-size: 18px;
+        }
         </style>
       `
   
@@ -73,8 +88,8 @@ looker.plugins.visualizations.add({
   
       // if debug, write out all the data
       if(config.debug){
-        id = 'date_pre'
-        if(document.getElementById('id')) {
+        id = 'data_pre'
+        if(document.getElementById(id)) {
           el = document.getElementById(id)
         } else {
           el = document.createElement('pre')
