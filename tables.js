@@ -82,7 +82,7 @@ looker.plugins.visualizations.add({
           this._textElement.appendChild(el)
         }
 
-        el.innerHTML = content
+        el.innerHTML = data
         // buildDebugPre("data_pre", data, this._textElement)
         // buildDebugPre("config_pre", config, this._textElement)
         // buildDebugPre("query_response_pre", queryResponse, this._textElement)
