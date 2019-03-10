@@ -35,7 +35,7 @@ looker.plugins.visualizations.add({
       container.className = "hello-world-vis"
   
       // Create an element to contain the text.
-      this._textElement = container.appendChild($("div"))
+      this._textElement = container.appendChild(document.createElement("div"))
       
 
     },
